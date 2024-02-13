@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ ! -d "/Applications/TeamViewerHost.app" ]; then
+	# Download Installer
+	curl -L "URL to your custom TeamViewerHost installer here" -o /tmp/TeamViewerHost.dmg
+	
+    # Mount DMG
+    hdiutil attach /tmp/TeamViewerHost.dmg
+    
+    # Run Installer
+    open -W /volumes/TeamViewerHost/Install\ TeamViewerHost.app/Contents/Resources/Install\ TeamViewerHost.pkg
+    
+    #Unmount DMG
+    hdiutil detach /Volumes/TeamViewerHost
+    
+    # Delete TVH installer
+    rm -rf /tmp/TeamViewerHost.dmg
+    
+fi
+exit 0
