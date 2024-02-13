@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [ ! -d "/Applications/Microsoft AutoUpdate.app" ]; then
+	ln -s "/Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app" /Applications/
+fi
+exit 0
